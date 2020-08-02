@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Provider } from 'react-redux';
+import { Provider as StoreProvider} from 'react-redux';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import Store from './Store/Store';
 import StackLoginRegistro from './Componentes/LoginRegistro/StackLoginRegistro';
 import TabLoginRegistro from './Componentes/LoginRegistro/TabLoginRegistro';
@@ -11,18 +12,21 @@ export default function App() {
   return (
     // <StackLoginRegistro/>
     // <TabLoginRegistro/>
-    <Provider store={Store}>
-      {/* <TabStackLoginRegistro/> */}
-      <StartSelector/>
-    </Provider>
+    <StoreProvider store={Store}>
+      <PaperProvider theme={theme}>
+        {/* <TabStackLoginRegistro/> */}
+        <StartSelector/>
+      </PaperProvider>
+    </StoreProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const theme = {
+  ...DefaultTheme,
+  roundness: 2,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#3498db',
+    accent: '#f1c40f',
   },
-});
+};
