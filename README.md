@@ -15,3 +15,15 @@ https://expo.io/learn
 
 -Levantar aplicación expo:
 .expo start
+
+
+# Para agregar react-native-material
+
+416  yarn add react-native-paper
+417  yarn add react-native-paper
+418  C:\Program Files (x86)\Yarn\bin\yarn add react-native-paper
+419  C:\Program Files (x86)\Yarn\bin\yarn.bat add react-native-paper
+420  npm i react-native-paper
+421  npm i react-native-vector-icons
+422  react-native link react-native-vector-icons
+
