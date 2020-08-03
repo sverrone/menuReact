@@ -32,12 +32,12 @@ const LoginForm = (props) => (
         </Button>
         
         <Button title="Login" mode="contained" raised theme={{ roundness: 10 }} 
-            onPress={props.handleSubmit(props.login)} loading="true">
+            onPress={props.handleSubmit(props.login)} loading={props.loading} ref={props.boton}>
                 Login
         </Button>
         
         <Button title="registrarse" mode="text" compact uppercase={false}>
-            No tenes una cuenta?,Registrate
+            No tenes una cuenta? Registrate
         </Button>
     </View>
 );
